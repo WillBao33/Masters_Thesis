@@ -17,3 +17,5 @@ Congress (CSME 2023)
   
 Z. Bao, H. Lang, and X. Lin, “Sidewalk Extraction on Aerial Images with Deep
 Learning and Path Planning Algorithm,” Eng Appl Artif Intell.
+
+**NOTE: sidewalk dataset available upon request**
