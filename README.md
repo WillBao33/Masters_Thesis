@@ -34,4 +34,24 @@ Learning and Path Planning Algorithm,” Eng Appl Artif Intell.
 6. Run [data_split.py](./1_dataset_preparation/data_split.py) to split the dataset into train/test/val sets.
 
 ## 2. Sidewalk Extraction and Refinement
+1. Update the [label_class_dict.csv](./2_Sidewalk_extraction_refinement/label_class_dict.csv) based on the training classes and their corresponding pixel values.
+2. Run [train.py](./2_Sidewalk_extraction_refinement/train.py) to train a segmentation model using the prepared dataset.
+3. The [refinement_path_planning.py](./2_Sidewalk_extraction_refinement/refinement_path_planning.py) file will refine a broken segmentation prediction using the A* algorithm.
+   * Make sure to update the graph size, the locations of two/more broken points, as well as the input and output directories.
+4. The [overlay.py](./2_Sidewalk_extraction_refinement/overlay.py) file will place the refined segmentation on top of the corresponding image.
 
+## 3. GPS-based Route Planning
+1. To concatenate all aerial/mask/prediction images, run:
+```
+python3 concat_aerial_image.py
+python3 concat_tiff_image.py
+```
+2. To connect the crosswalks on the map, run:
+```
+python3 draw_line.py
+python3 draw_line_tif.py
+```
+3. Run GPS-based route planning on the aerial map:
+```
+python3 path_networkx_center_new.py
+```
