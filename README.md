@@ -22,7 +22,16 @@ Learning and Path Planning Algorithm,” Eng Appl Artif Intell.
 
 ## 1. Sidewalk Dataset Preparation
 1. Download the [QGIS](https://qgis.org/en/site/) to manually create sidewalk annotations on satellite images.
-2. Follow the video instructions to create the sidewalk annotations:
+2. Follow the video [instructions](https://drive.google.com/file/d/1ATnFS2TrF31PhgAlhtcCfu6uByudOMQq/view?usp=sharing) to create the sidewalk annotations:
    * This method can also create segmentation annotations for other classes, such as roads, road boundaries, and buildings.
    * Select different coordinate systems and scales based on application preference.
 3. Under the [1_dataset_preparation](./1_dataset_preparation) directory, execute the [Export_image.py](./1_dataset_preparation/Export_image.py) **inside** the QGIS software built-in Python console.
+   * Make sure to update your coordinate reference system (CRS), output image path, and output image format.
+   * Uncheck the annotation layer when only exporting the aerial images, and vice versa when only exporting the annotation images.
+4. Depending on the image format used, [cvt_binary_png.py](./1_dataset_preparation/cvt_binary_png.py) or [cvt_binary_tif.py](./1_dataset_preparation/cvt_binary_tif.py) can be used to convert the 3-channel annotation images into binary image format.
+   * [cvt_binary_tif.py](./1_dataset_preparation/cvt_binary_tif.py) is suggested to be used only when the GPS information is required during the conversion.
+5. [image_augmentation.py](./1_dataset_preparation/image_augmentation.py) can be used to create vertical and horizontal flip augmentation on the aerial and mask images. (optional)
+6. Run [data_split.py](./1_dataset_preparation/data_split.py) to split the dataset into train/test/val sets.
+
+## 2. Sidewalk Extraction and Refinement
+
