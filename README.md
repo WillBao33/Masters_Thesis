@@ -19,3 +19,10 @@ Z. Bao, H. Lang, and X. Lin, “Sidewalk Extraction on Aerial Images with Deep
 Learning and Path Planning Algorithm,” Eng Appl Artif Intell.
 
 **NOTE: sidewalk dataset available upon request**
+
+## 1. Sidewalk Dataset Preparation
+1. Download the [QGIS](https://qgis.org/en/site/) to manually create sidewalk annotations on satellite images.
+2. Follow the video instructions to create the sidewalk annotations:
+   * This method can also create segmentation annotations for other classes, such as roads, road boundaries, and buildings.
+   * Select different coordinate systems and scales based on application preference.
+3. Under the [1_dataset_preparation](./1_dataset_preparation) directory, execute the [Export_image.py](./1_dataset_preparation/Export_image.py) **inside** the QGIS software built-in Python console.
