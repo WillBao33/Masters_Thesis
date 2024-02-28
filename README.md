@@ -32,6 +32,8 @@ Learning and Path Planning Algorithm,” Eng Appl Artif Intell.
    * [cvt_binary_tif.py](./1_dataset_preparation/cvt_binary_tif.py) is suggested to be used only when the GPS information is required during the conversion.
 5. [image_augmentation.py](./1_dataset_preparation/image_augmentation.py) can be used to create vertical and horizontal flip augmentation on the aerial and mask images. (optional)
 6. Run [data_split.py](./1_dataset_preparation/data_split.py) to split the dataset into train/test/val sets.
+### Sample Dataset
+<img src=./imgs/dataset_sample.png width="100%" height="100%">
 
 ## 2. Sidewalk Extraction and Refinement
 1. Update the [label_class_dict.csv](./2_Sidewalk_extraction_refinement/label_class_dict.csv) based on the training classes and their corresponding pixel values.
@@ -39,6 +41,11 @@ Learning and Path Planning Algorithm,” Eng Appl Artif Intell.
 3. The [refinement_path_planning.py](./2_Sidewalk_extraction_refinement/refinement_path_planning.py) file will refine a broken segmentation prediction using the A* algorithm.
    * Make sure to update the graph size, the locations of two/more broken points, as well as the input and output directories.
 4. The [overlay.py](./2_Sidewalk_extraction_refinement/overlay.py) file will place the refined segmentation on top of the corresponding image.
+### Sidewalk Extraction Inference Results (Aerial Image/Ground Truth/Prediction)
+<img src=./imgs/prediction.png width="100%" height="100%">
+
+### Sidewalk Segmentation Refinement Sample Results
+<img src=./imgs/refinement.png width="100%" height="100%">
 
 ## 3. GPS-based Route Planning
 1. To concatenate all aerial/mask/prediction images, run:
