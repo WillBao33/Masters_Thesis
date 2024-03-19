@@ -65,3 +65,6 @@ python3 path_networkx_center_new.py
 ### Route Planning on Sidewalk Samples
 <img src=./imgs/route_1s.png width="100%" height="100%">
 <img src=./imgs/route_2s.png width="100%" height="100%">
+
+## License
+MIT
